@@ -2,8 +2,8 @@ package regwhitton.dwptest.restapi;
 
 import static org.mockito.BDDMockito.given;
 import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
-import static org.springframework.http.MediaType.APPLICATION_STREAM_JSON;
-import static org.springframework.http.MediaType.APPLICATION_STREAM_JSON_VALUE;
+import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,9 +39,9 @@ class LondonUserControllerTest {
 
         webTestClient.get()
             .uri("/londonusers")
-            .accept(APPLICATION_STREAM_JSON)
+            .accept(APPLICATION_JSON)
             .exchange()
-            .expectHeader().valueEquals(CONTENT_TYPE, APPLICATION_STREAM_JSON_VALUE)
+            .expectHeader().valueEquals(CONTENT_TYPE, APPLICATION_JSON_VALUE)
             .expectBody().json("{"
                 + "'id':7,"
                 + "'first_name':'James',"
