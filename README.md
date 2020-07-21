@@ -30,7 +30,7 @@ Browse to <http://localhost:8080/swagger-ui/> expand the controller and "Try it 
 
 This project uses Lombok to insert getters, setters and other boiler plate code during runtime.  As a consequence the raw code will show compilation errors in an IDE such as Eclipse, IntelliJ or Netbeans.
 
-To avoid this use the Lombok plugin go to <https://projectlombok.org/> and select the installation instructions for your IDE from the "Install" menu.
+To avoid this use the Lombok plugin. Go to <https://projectlombok.org/> and select the installation instructions for your IDE from the "Install" menu.
 
 ## Architecture
 

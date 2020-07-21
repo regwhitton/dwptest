@@ -24,7 +24,7 @@ public class RestApiConfig {
             .paths(any())
             .build();
     }
-    
+
     private String thisPackage() {
         return this.getClass().getPackage().getName();
     }

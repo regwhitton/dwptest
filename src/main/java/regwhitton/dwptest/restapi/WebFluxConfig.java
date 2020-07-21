@@ -41,7 +41,7 @@ public class WebFluxConfig implements WebFluxConfigurer {
         codecs.jackson2JsonEncoder(new Jackson2JsonEncoder(objectMapper));
         codecs.jackson2JsonDecoder(new Jackson2JsonDecoder(objectMapper));
     }
-
+    
     private ObjectMapper objectMapper() {
         return new Jackson2ObjectMapperBuilder()
             .propertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE)
