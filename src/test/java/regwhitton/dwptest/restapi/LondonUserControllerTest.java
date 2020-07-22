@@ -4,6 +4,7 @@ import static org.mockito.BDDMockito.given;
 import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static regwhitton.dwptest.test.TestUtils.fluxOf;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,6 @@ import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
-import reactor.core.publisher.Flux;
 import regwhitton.dwptest.model.User;
 import regwhitton.dwptest.service.londonusers.LondonUserService;
 
@@ -42,7 +42,7 @@ class LondonUserControllerTest {
             .accept(APPLICATION_JSON)
             .exchange()
             .expectHeader().valueEquals(CONTENT_TYPE, APPLICATION_JSON_VALUE)
-            .expectBody().json("{"
+            .expectBody().json("[{"
                 + "'id':7,"
                 + "'first_name':'James',"
                 + "'last_name':'Bond',"
@@ -50,11 +50,6 @@ class LondonUserControllerTest {
                 + "'ip_address':'104.18.6.144',"
                 + "'latitude':51.487222,"
                 + "'longitude':-0.124167"
-                + "}");
-    }
-
-    @SuppressWarnings("unchecked")
-    private <T> Flux<T> fluxOf(T... things) {
-        return Flux.fromArray(things);
+                + "}]");
     }
 }
